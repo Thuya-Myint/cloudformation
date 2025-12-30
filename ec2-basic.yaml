@@ -1,0 +1,17 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: Simple EC2
+
+Parameters:
+  InstanceType:
+    Type: String
+    Default: t3.micro
+
+Resources:
+  MyEC2:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: !Ref InstanceType
+      ImageId: ami-09cd9fdbf26acc6b4
+      Tags:
+      - Key: cf-basic
+        Value: ec2
